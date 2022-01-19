@@ -20,8 +20,8 @@ const Char = ({ value, color, row, column, onChange }) => {
     }
 
     return (
-        <div className={'CharWrapper Color' + color}>
-            <span className={"Char"} onClick={handleClick}>{value}</span>
+        <div className={'CharWrapper Color' + color} onClick={handleClick}>
+            <span className={"Char"} >{value}</span>
         </div>
     )
 }

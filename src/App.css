@@ -11,18 +11,16 @@ a {
 
 .App {
   text-align: center;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-
   margin: 10px;
 }
 
 .Hint {
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 
 .WordWrapper {
@@ -33,8 +31,16 @@ a {
   width: 100%;
 }
 
+.RowIndex {
+  color: #777;
+  font-size: 0.7em;
+  padding-right: 6px;
+}
+
 .CharWrapper {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   border: 1px solid #777;
   text-align: center;
@@ -51,3 +57,33 @@ a {
 .Color0 { background-color: #777; }
 .Color1 { background-color: #ffc400; }
 .Color2 { background-color: green; }
+
+
+
+.UpdateWrapper {
+  margin: 20px 0;
+  width: 100%;
+}
+
+button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: none;
+  background-color: #0066ff;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  width: 50%;
+  max-width: 250px;
+}
+
+.MatchingWordsWrapper {
+  text-align: start;
+}
+
+.MatchingWord {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: monospace;
+}
