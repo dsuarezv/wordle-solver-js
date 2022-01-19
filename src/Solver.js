@@ -118,5 +118,14 @@ export function adaptPuzzleState(words, colors) {
         }
     }
 
+    // Remove knownChars from otherChars
+    result.otherChars = result.otherChars.map(otherChars => {
+        let res = [];
+        otherChars.forEach(oc => {
+            if (!result.knownChars.includes(oc)) res.push(oc);
+        });
+        return res;
+    });
+
     return result;
 }

@@ -13,8 +13,8 @@ import { EnglishWordList } from './EnglishWordList';
 function App() {
 
     const [words, setWords]  = useState([ 'AERIE', 'SNITS', 'THING', '     ', '     ', '     ' ]);
-    //const [colors, setColors] = useState([ [0, 0, 0, 1, 0], [0, 1, 2, 1, 0], [1, 0, 2, 2, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0] ]);
-    const [colors, setColors] = useState([ [0, 0, 0, 1, 0], [0, 1, 2, 1, 0], [1, 0, 2, 2, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0] ]);
+    const [colors, setColors] = useState([ [0, 0, 0, 1, 0], [0, 1, 2, 1, 0], [1, 0, 2, 2, 0], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5] ]);
+    //const [colors, setColors] = useState([ [0, 0, 0, 1, 0], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5] ]);
     const [matchingWords, setMatchingWords] = useState([]);
 
     const handleChange = (row, column, value, color) => {
@@ -43,14 +43,14 @@ function App() {
             <div className="UpdateWrapper">
                 <button onClick={handleUpdate}>Update</button>
             </div>
-
             
-            <h1>MATCHING WORDS</h1>
+            <h1>POSSIBLE WORDS</h1>
+            <p>Total: {matchingWords.length}</p>
             <div className='MatchingWordsWrapper'>
-                {matchingWords.map(word => <span key={word} className='MatchingWord'>{word} </span>)}
+                {matchingWords.map(word => word + ' ')}
             </div>
             
-            <h1>WORD STATS</h1>
+            <h1>WORD SCORES</h1>
             <p className='Hint'>Top 20 word scores with the current char distribution.</p>
             <h1>LETTER STATS</h1>
             <p className='Hint'>A chart with the char distribution in the current wordlist.</p>

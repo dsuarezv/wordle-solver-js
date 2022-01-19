@@ -79,11 +79,8 @@ button {
 }
 
 .MatchingWordsWrapper {
-  text-align: start;
-}
-
-.MatchingWord {
-  font-weight: 600;
+  line-height: 1.4em;
+  font-weight: 900;
   text-transform: uppercase;
   font-family: monospace;
 }
