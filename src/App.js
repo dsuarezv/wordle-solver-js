@@ -7,6 +7,7 @@ import { EnglishWordList as WordList } from './EnglishWordList';
 //import { SpanishWordList as WordList } from './SpanishWordList';
 import MatchingWords from './MatchingWords';
 import Footer from './Footer';
+import animateScroll from 'react-scroll';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         const result = getCandidates(WordList, puzzleState);
         setMatchingWords(result);
         setUpdated(true);
+        animateScroll.scroller.scrollTo("MatchingWords");
     }
 
     return (
@@ -41,7 +43,7 @@ function App() {
             {words.map((word, i) => <Word key={i} rowNumber={i} word={word} colors={colors[i]} onChange={handleChange} canEditWord={true} />)}
 
             <div className="UpdateWrapper">
-                <button onClick={handleUpdate}>Update</button>
+                <button  onClick={handleUpdate}>Update</button>
             </div>
             
             <MatchingWords updated={updated} data={matchingWords} />

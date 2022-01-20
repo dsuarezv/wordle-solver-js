@@ -2,7 +2,7 @@ import React from 'react';
 
 const MatchingWords = ({updated, data}) => {
     return (
-        <>
+        <div name="MatchingWords">
             <h1>MATCHING WORDS</h1>
             <div className='MatchingWordsWrapper'>
                 {updated ? (
@@ -18,7 +18,7 @@ const MatchingWords = ({updated, data}) => {
                     <p>Press the "Update" button above to generate the list of words that match your criteria.</p>
                 }
             </div>
-        </>
+        </div>
     )
 }
 
