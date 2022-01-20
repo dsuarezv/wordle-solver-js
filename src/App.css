@@ -91,3 +91,13 @@ button {
   color: white;
   background-color: #ff00c8;
 }
+
+footer {
+  margin: 100px 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .Char {
+    font-size: 1.3em;
+  }
+}

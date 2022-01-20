@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { adaptPuzzleState, getCandidates } from './Solver';
 import { EnglishWordList } from './EnglishWordList';
 import MatchingWords from './MatchingWords';
+import Footer from './Footer';
 
 
 function App() {
@@ -44,12 +45,14 @@ function App() {
             
             <MatchingWords updated={updated} data={matchingWords} />
 
-            <h1>WORD SCORES</h1>
+            {/* <h1>WORD SCORES</h1>
             <p className='Hint'>Top 20 word scores with the current char distribution.</p>
             <h1>LETTER STATS</h1>
             <p className='Hint'>A chart with the char distribution in the current wordlist.</p>
             <h1>REGEX MATCHES</h1>
-            <p className='Hint'>Finally a textbox to enter a regex and filter the current wordlist.</p>
+            <p className='Hint'>Finally a textbox to enter a regex and filter the current wordlist.</p> */}
+
+            <Footer />
         </div>
     );
 }
