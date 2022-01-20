@@ -1,22 +1,15 @@
 import React from 'react';
 
-
-
-const Char = ({ value, color, row, column, onChange }) => {
-
-    const handleChange = () => {
-        if (onChange) onChange(row, column, value, color);
-    }
+const Char = ({ value, color, column, onColorChange, onEdit }) => {
 
     const handleClick = () => {
-        // cycle colors
-        if (color < 2)
-            color++
-        else 
-            color = 0;
-
-        // and notify change
-        handleChange(row, column, value, color);
+        if (onEdit) {
+            onEdit();
+            return;
+        }
+        
+        const newColor = (color < 2) ? color + 1 : 0;
+        if (onColorChange) onColorChange(column, newColor);
     }
 
     return (

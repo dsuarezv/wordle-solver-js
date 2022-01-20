@@ -114,6 +114,8 @@ export function adaptPuzzleState(words, colors) {
                 case 2: // green: known char, letter present in that column
                     result.knownChars[col] = char;
                     break;
+                default: 
+                    break;
             }
         }
     }
