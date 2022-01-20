@@ -3,7 +3,8 @@ import Word from './Word';
 import Header from './Header';
 import { useState } from 'react';
 import { adaptPuzzleState, getCandidates } from './Solver';
-import { EnglishWordList } from './EnglishWordList';
+import { EnglishWordList as WordList } from './EnglishWordList';
+//import { SpanishWordList as WordList } from './SpanishWordList';
 import MatchingWords from './MatchingWords';
 import Footer from './Footer';
 
@@ -28,7 +29,7 @@ function App() {
 
     const handleUpdate = () => {
         const puzzleState = adaptPuzzleState(words, colors);
-        const result = getCandidates(EnglishWordList, puzzleState);
+        const result = getCandidates(WordList, puzzleState);
         setMatchingWords(result);
         setUpdated(true);
     }
