@@ -9,8 +9,8 @@ import MatchingWords from './MatchingWords';
 
 function App() {
 
-    const [words, setWords]  = useState([ 'AERIE', 'SNITS', 'THING', '     ', '     ', '     ' ]);
-    const [colors, setColors] = useState([ [0, 0, 0, 1, 0], [0, 2, 2, 2, 2], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5] ]);
+    const [words, setWords]  = useState([ '     ', '     ', '     ', '     ', '     ', '     ' ]);
+    const [colors, setColors] = useState([ [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5] ]);
     const [matchingWords, setMatchingWords] = useState([]);
     const [updated, setUpdated] = useState(false);
     

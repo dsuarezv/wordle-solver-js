@@ -31,10 +31,16 @@ const Word = ({word, colors, onChange, rowNumber, canEditWord}) => {
         setEditVisible(false);
     }
 
+    const chars = [ ' ', ' ', ' ', ' ', ' ' ];
+
+    for (let i = 0; i < word.length; ++i) {
+        if (word[i] !== ' ') chars[i] = word[i];
+    }
+
     return (
         <>
             <div className="WordWrapper">
-                {[...word].map((cv, i) => <Char key={i} value={cv} color={colors[i]} row={rowNumber} column={i} onColorChange={handleChange} onEdit={canEditWord ? handleClick : null} />)}
+                {chars.map((cv, i) => <Char key={i} value={cv} color={colors[i]} row={rowNumber} column={i} onColorChange={handleChange} onEdit={canEditWord ? handleClick : null} />)}
             </div>
             {editVisible && <WordInput onCancel={handleEditCancel} onSave={handleEditSave} chars={[...word]} colors={colors} />}
         </>
