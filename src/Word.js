@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Char from './Char';
 import WordInput from './WordInput';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const Word = ({word, colors, onChange, rowNumber, canEditWord}) => {
 

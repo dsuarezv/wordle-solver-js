@@ -8,7 +8,7 @@ import { EnglishWordList as WordList } from './EnglishWordList';
 import MatchingWords from './MatchingWords';
 import Footer from './Footer';
 import animateScroll from 'react-scroll';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 ReactGA.initialize(process.env.REACT_APP_GA_ID); 
 ReactGA.pageview("index");
