@@ -40,7 +40,7 @@ When a yellow letter is duplicated, Wordle will display the second one in grey c
 
 ## To do
 
-* fix spaces in word input textbox.
+* ~~fix spaces in word input textbox.~~
 * add explicit close button to input window.
 * add option to remove word in the grid.
 * ~~add google analytics.~~

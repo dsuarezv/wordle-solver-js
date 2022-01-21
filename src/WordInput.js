@@ -61,7 +61,8 @@ const WordInput = ({chars, colors, onCancel, onSave}) => {
         setWordColors(updatedColors);
     }
 
-    const word = wordChars.join("");
+    let word = wordChars.join("");
+    if (word === "     ") word = "";
 
     return (
         <div className="ModalBackground" onClick={onCancel}>
