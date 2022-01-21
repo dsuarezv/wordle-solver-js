@@ -8,7 +8,10 @@ import { EnglishWordList as WordList } from './EnglishWordList';
 import MatchingWords from './MatchingWords';
 import Footer from './Footer';
 import animateScroll from 'react-scroll';
+import ReactGA from 'react-ga';
 
+ReactGA.initialize(process.env.REACT_APP_GA_ID); 
+ReactGA.pageview("index");
 
 function App() {
 
@@ -34,6 +37,7 @@ function App() {
         setMatchingWords(result);
         setUpdated(true);
         animateScroll.scroller.scrollTo("MatchingWords");
+        ReactGA.event({category: "interaction", action: "update" });
     }
 
     return (

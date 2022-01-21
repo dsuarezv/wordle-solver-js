@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Char from './Char';
 import WordInput from './WordInput';
+import ReactGA from 'react-ga';
 
 const Word = ({word, colors, onChange, rowNumber, canEditWord}) => {
 
@@ -18,16 +19,19 @@ const Word = ({word, colors, onChange, rowNumber, canEditWord}) => {
 
     const handleClick = (e) => {
         if (canEditWord) {
+            ReactGA.event({category: "interaction", action: "openedit" });
             setEditVisible(true);
         }
     }
 
     const handleEditSave = (word, updatedColors) => {
         onChange(rowNumber, word, updatedColors);
+        ReactGA.event({category: "interaction", action: "saveword", label: word });
         setEditVisible(false);
     }
 
     const handleEditCancel = () => {
+        ReactGA.event({category: "interaction", action: "canceledit" });
         setEditVisible(false);
     }
 
