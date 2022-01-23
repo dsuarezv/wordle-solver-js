@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer>Created by <a href="https://github.com/dsuarezv/wordle-solver-js">David Su&aacute;rez</a></footer>
+        <footer>See further <a href="https://github.com/dsuarezv/wordle-solver-js">instructions here</a></footer>
     )
 }
 

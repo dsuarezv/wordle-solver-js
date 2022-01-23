@@ -3,7 +3,7 @@ import Word from './Word';
 import Header from './Header';
 import { useState } from 'react';
 import { adaptPuzzleState, getCandidates } from './Solver';
-import { EnglishWordList as WordList } from './EnglishWordList';
+import { EnglishWordListWordle as WordList } from './EnglishWordListWordle';
 //import { SpanishWordList as WordList } from './SpanishWordList';
 import MatchingWords from './MatchingWords';
 import Footer from './Footer';
@@ -15,7 +15,7 @@ ReactGA.pageview("index");
 
 function App() {
 
-    const [words, setWords]  = useState([ '     ', '     ', '     ', '     ', '     ', '     ' ]);
+    const [words, setWords]  = useState([ 'raise', '     ', '     ', '     ', '     ', '     ' ]);
     const [colors, setColors] = useState([ [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5] ]);
     const [matchingWords, setMatchingWords] = useState([]);
     const [updated, setUpdated] = useState(false);

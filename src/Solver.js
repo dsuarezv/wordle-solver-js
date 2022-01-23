@@ -1,4 +1,26 @@
 
+function getCharFrequency(wordList) {
+    const res = {};
+    for (let i = 'a'; i <= 'z'; ++i) res[i] = 0;
+
+    wordList.forEach(word => {
+        [...word].forEach(c => res[c] += 1);
+    });
+    
+    return res;
+}
+
+function normalizeDict(dict) {
+    let max = 0;
+    Object.keys.forEach(k => {
+        if (dict[k] > max) max = dict[k];
+    });
+
+    const res = {}
+    Object.keys.forEach(k => res[k] = dict[k] / max);
+    return res;
+}
+
 function getUniqueOtherChars(otherChars) {
     var res = [];
 
@@ -128,6 +150,12 @@ export function adaptPuzzleState(words, colors) {
         });
         return res;
     });
+
+    // Remove otherChars from reject chars
+    const uniqueOtherChars = getUniqueOtherChars(result.otherChars);
+    const newRejects = [];
+    result.rejects.forEach(r => { if (!uniqueOtherChars.includes(r)) newRejects.push(r); });
+    result.rejects = newRejects;
 
     return result;
 }

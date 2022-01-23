@@ -48,3 +48,5 @@ When a yellow letter is duplicated, Wordle will display the second one in grey c
 * add other languages, just need the wordlists, adding some flag icons and maybe translating the UI (maybe not needed in the beginning).
 * the case of the same char marked yellow and grey in a different location that filters too much. 
 * letter frequency stats.
+* improve English wordlist. Should include dictionary words only. 
+* score each word based on current wordlist char frequency and non-repeating chars. Normalize each criteria and average (weighted?) or multiply to get final word score. 
