@@ -14,7 +14,7 @@ const Word = ({word, colors, onChange, rowNumber, canEditWord}) => {
         const updatedCharColors = [...colors];
         updatedCharColors[column] = updatedColor;
 
-        onChange(rowNumber, word, updatedCharColors);
+        if (onChange) onChange(rowNumber, word, updatedCharColors);
     }
 
     const handleClick = (e) => {

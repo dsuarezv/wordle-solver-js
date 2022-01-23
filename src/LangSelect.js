@@ -16,14 +16,6 @@ const LangSelect = ({value, onChange}) => {
         <div className='LangSelectWrapper'>
             {langs.map(lang => {
                 return (
-                    // <span 
-                    //     key={lang} 
-                    //     className={'LangItem' + (lang === value ? ' Selected' : '')}
-                    //     onClick={() => onChange(lang)}
-                    // >
-                    //     {lang.toUpperCase()}
-                        
-                    // </span>
                     <img 
                         key={lang}
                         src={imgs[lang]}

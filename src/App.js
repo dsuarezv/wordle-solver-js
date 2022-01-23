@@ -10,6 +10,8 @@ import Footer from './Footer';
 import animateScroll from 'react-scroll';
 import ReactGA from 'react-ga4';
 import LangSelect from './LangSelect';
+import CharFrequency from './CharFrequency';
+import TopScoreWords from './TopScoreWords';
 
 ReactGA.initialize(process.env.REACT_APP_GA_ID); 
 ReactGA.pageview("index");
@@ -46,7 +48,7 @@ function App() {
         const result = getCandidates(wordlists[lang], puzzleState);
         setMatchingWords(result);
         setUpdated(true);
-        animateScroll.scroller.scrollTo("MatchingWords");
+        animateScroll.scroller.scrollTo("TopScores");
         ReactGA.event({category: "interaction", action: "update" });
     }
 
@@ -72,12 +74,17 @@ function App() {
                 <button onClick={handleUpdate}>Update</button>
             </div>
             
+            <TopScoreWords wordList={matchingWords} />
+
+            <CharFrequency wordList={matchingWords} />
+
             <MatchingWords updated={updated} data={matchingWords} />
 
             {/* <h1>WORD SCORES</h1>
             <p className='Hint'>Top 20 word scores with the current char distribution.</p>
-            <h1>LETTER STATS</h1>
-            <p className='Hint'>A chart with the char distribution in the current wordlist.</p>
+            
+            
+            
             <h1>REGEX MATCHES</h1>
             <p className='Hint'>Finally a textbox to enter a regex and filter the current wordlist.</p> */}
 
