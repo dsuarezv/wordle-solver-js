@@ -19,10 +19,13 @@ const wordlists = {
     'en': EnglishWordList
 }
 
+const InitialWords = [ '     ', '     ', '     ', '     ', '     ', '     ' ];
+const InitialColors = [ [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5] ];
+
 function App() {
 
-    const [words, setWords]  = useState([ '     ', '     ', '     ', '     ', '     ', '     ' ]);
-    const [colors, setColors] = useState([ [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5], [5, 5, 5, 5, 5] ]);
+    const [words, setWords]  = useState(InitialWords);
+    const [colors, setColors] = useState(InitialColors);
     const [matchingWords, setMatchingWords] = useState([]);
     const [updated, setUpdated] = useState(false);
     const [lang, setLang] = useState('en');
@@ -49,14 +52,19 @@ function App() {
 
     const handleLangChange = (lang) => {
         setLang(lang);
+        
         // reset status when changing language
+        setWords(InitialWords);
+        setColors(InitialColors);
     }
 
     return (
         <div className="App">
-            <Header />
+            <h1>WORDLE HELPER</h1>
 
             <LangSelect value={lang} onChange={handleLangChange} />
+
+            <Header />
 
             {words.map((word, i) => <Word key={i} rowNumber={i} word={word} colors={colors[i]} onChange={handleChange} canEditWord={true} />)}
 

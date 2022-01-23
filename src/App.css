@@ -20,11 +20,12 @@ a {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  margin: 10px;
+  margin: 10px 20px;
 }
 
 .Hint {
   font-size: 0.7em;
+  margin: 20px 0;
 }
 
 .WordWrapper {
