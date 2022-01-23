@@ -1,0 +1,22 @@
+.LangSelectWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.LangItem {
+    display: block;
+    font-size: 1.2em;
+    color: #AAA;
+    margin: 20px 20px;
+    cursor: pointer;
+    padding: 10px 15px;
+    
+}
+
+.LangItem.Selected {
+    font-weight: 600;
+    color: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 100px;
+}
