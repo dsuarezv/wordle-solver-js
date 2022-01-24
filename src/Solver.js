@@ -55,7 +55,7 @@ export function getCandidates(wordList, puzzleState) {
             }
         }
 
-        if (!discarded && numExacMatches === numKnownChars && numOtherChars === numUniqueOtherChars) {
+        if (!discarded && numExacMatches === numKnownChars && numOtherChars >= numUniqueOtherChars) {
             result.push(word);
         }
     });

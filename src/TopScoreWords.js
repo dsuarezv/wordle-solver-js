@@ -17,8 +17,7 @@ const TopScoreWords = ({wordList}) => {
             <div className='TopScores'>
                 {scores.map(d => {
                     return (
-                        // <p>{d.word}: {d.score} {d.unique}</p>
-                        <Word word={d.word} colors={[5, 5, 5, 5, 5]} />
+                        <Word key={d.word} word={d.word} colors={[5, 5, 5, 5, 5]} />
                     )
                 })}
             </div>
