@@ -131,7 +131,7 @@ export function adaptPuzzleState(words, colors) {
     // Remove otherChars from reject chars
     const uniqueOtherChars = getUniqueOtherChars(result.otherChars);
     const newRejects = [];
-    result.rejects.forEach(r => { if (!uniqueOtherChars.includes(r)) newRejects.push(r); });
+    result.rejects.forEach(r => { if (!uniqueOtherChars.includes(r) && !result.knownChars.includes(r)) newRejects.push(r); });
     result.rejects = newRejects;
 
     return result;
