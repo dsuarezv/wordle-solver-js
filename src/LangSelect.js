@@ -1,8 +1,8 @@
 import React from 'react';
 import './LangSelect.css';
 
-import EN from './en.png';
-import ES from './es.png';
+import EN from './imgs/en.png';
+import ES from './imgs/es.png';
 
 const LangSelect = ({value, onChange}) => {
 
