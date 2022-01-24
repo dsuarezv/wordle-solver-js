@@ -4,6 +4,8 @@ import './CharFrequency.css';
 
 const CharFrequency = ({wordList}) => {
 
+    if (!wordList || wordList.length === 0) return null;
+
     var stats = normalizeDict(getCharFrequency(wordList));
 
     return (
