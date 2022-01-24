@@ -50,10 +50,12 @@ export function getWordScores(wordList, charFrequencies) {
         return {
             word, 
             unique,
-            freqScore,
-            score: unique * freqScore
+            freqScore
         }
     });
 
-    return result.sort((a, b) => b.score - a.score);
+    return result.sort((a, b) => {
+        if (a.unique === b.unique) return b.freqScore - a.freqScore;
+        return b.unique - a.unique;
+    } );
 }
