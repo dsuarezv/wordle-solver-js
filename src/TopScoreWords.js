@@ -2,6 +2,16 @@ import React from 'react';
 import { getCharFrequency, getWordScores } from './Scorer';
 import Word from './Word';
 
+
+export function getColorForFreq(charFreq) {
+    const tenth = Math.round(charFreq * 10);
+    return 100 + tenth;
+}
+
+function getColorsFromFreqs(charFreqs) {
+    return charFreqs.map(cf => getColorForFreq(cf));
+}
+
 const TopScoreWords = ({wordList}) => {
 
     if (!wordList || wordList.length === 0) return null;
@@ -17,7 +27,7 @@ const TopScoreWords = ({wordList}) => {
             <div className='TopScores'>
                 {scores.map(d => {
                     return (
-                        <Word key={d.word} word={d.word} colors={[5, 5, 5, 5, 5]} />
+                        <Word key={d.word} word={d.word} colors={getColorsFromFreqs(d.charFreqs)} />
                     )
                 })}
             </div>

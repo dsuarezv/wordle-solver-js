@@ -40,18 +40,18 @@ function getUniqueChars(wordChars) {
 export function getWordScores(wordList, charFrequencies) {
     // Strategy: get word score based on char freqency, and multiple by number of unique chars. 
     // Words with more unique chars score higher than words with high frequency but repeated chars.
+    
+    var normCharFreqs = normalizeDict(charFrequencies);
+    
     const result = wordList.map(word => {
         const wordChars = [...word];
         const unique = getUniqueChars(wordChars);
         const freqScore = wordChars.reduce((prev, current) => {
-            return prev + charFrequencies[current];
-        }, 0);
+            return prev * normCharFreqs[current];
+        }, 1);
+        const charFreqs = [...wordChars.map(c => normCharFreqs[c])];
 
-        return {
-            word, 
-            unique,
-            freqScore
-        }
+        return { word, unique, freqScore, charFreqs };
     });
 
     return result.sort((a, b) => {
