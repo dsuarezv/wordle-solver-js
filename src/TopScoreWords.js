@@ -14,7 +14,12 @@ function getColorsFromFreqs(charFreqs) {
 
 const TopScoreWords = ({wordList}) => {
 
-    if (!wordList || wordList.length === 0) return null;
+    if (!wordList || wordList.length === 0) return (
+        <div name="TopScores" className='TopScoreWrapper'>
+            <h1>TOP SUGGESTIONS</h1>
+            <p>Press the "Update" button above to generate the list of words that match your criteria.</p>
+        </div>
+    )
 
     const charFreqs = getCharFrequency(wordList);
     let scores = getWordScores(wordList, charFreqs);
@@ -25,6 +30,7 @@ const TopScoreWords = ({wordList}) => {
         <div name="TopScores" className='TopScoreWrapper'>
             <h1>TOP SUGGESTIONS</h1>
             <div className='TopScores'>
+                {scores.length === 1 && <p>Solved!</p>}
                 {scores.map(d => {
                     return (
                         <Word key={d.word} word={d.word} colors={getColorsFromFreqs(d.charFreqs)} />

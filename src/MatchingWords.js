@@ -15,7 +15,7 @@ const MatchingWords = ({updated, data}) => {
                         </>
                     )
                     :
-                    <p>Press the "Update" button above to generate the list of words that match your criteria.</p>
+                    null
                 }
             </div>
         </div>

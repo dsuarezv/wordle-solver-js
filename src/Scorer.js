@@ -59,3 +59,10 @@ export function getWordScores(wordList, charFrequencies) {
         return b.unique - a.unique;
     } );
 }
+
+
+
+
+export function getWordScores2(wordList, puzzleState) {
+
+}
