@@ -4,7 +4,7 @@ import Header from './Header';
 import { useState } from 'react';
 import { adaptPuzzleState, getCandidates } from './Solver';
 import { EnglishWordListWordle as EnglishWordList } from './EnglishWordListWordle';
-import { SpanishWordList as SpanishWordList } from './SpanishWordList';
+import { SpanishWordList as SpanishWordList } from './SpanishWordListDanielFRG';
 import MatchingWords from './MatchingWords';
 import Footer from './Footer';
 import animateScroll from 'react-scroll';
